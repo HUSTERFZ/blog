@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/blog/lib/animate-css/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"rcore-os.github.io","root":"/blog/","scheme":"Muse","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}}};
+  </script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="rcore-os Blog">
+<meta property="og:url" content="http://rcore-os.github.io/blog/index.html">
+<meta property="og:site_name" content="rcore-os Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="rcore-os Group">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://rcore-os.github.io/blog/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
+
+  <title>rcore-os Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">rcore-os Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">rcore-os Group</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content index posts-expand">
+          
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://rcore-os.github.io/blog/2020/09/06/os-report-final-luojia65/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="rcore-os Group">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rcore-os Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/09/06/os-report-final-luojia65/" class="post-title-link" itemprop="url">洛佳：K210组RustSBI开发总结</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-09-06 15:27:20 / Modified: 08:13:39" itemprop="dateCreated datePublished" datetime="2020-09-06T15:27:20+00:00">2020-09-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/report/" itemprop="url" rel="index"><span itemprop="name">report</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>我在第二个月的时间里完成了RustSBI很多部分的开发。它已经能运行rCore-Tutorial，并且支持qemu、K210<br>两款硬件平台。希望未来的时间里，我能为RustSBI编写更多平台的支持，也为丰富社区项目做一些贡献。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2020/09/06/os-report-final-luojia65/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://rcore-os.github.io/blog/2020/09/02/zcore_report_chechunchi/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="rcore-os Group">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rcore-os Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/09/02/zcore_report_chechunchi/" class="post-title-link" itemprop="url">zCore Summer of Code 2020 报告 by 车春池</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-09-02 23:00:00" itemprop="dateCreated datePublished" datetime="2020-09-02T23:00:00+00:00">2020-09-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-06 08:13:39" itemprop="dateModified" datetime="2020-09-06T08:13:39+00:00">2020-09-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/report/" itemprop="url" rel="index"><span itemprop="name">report</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="zCore-Summer-of-Code-2020-报告"><a href="#zCore-Summer-of-Code-2020-报告" class="headerlink" title="zCore Summer of Code 2020 报告"></a>zCore Summer of Code 2020 报告</h1><p>华中科技大学<br>计算机科学与技术<br>车春池<br></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2020/09/02/zcore_report_chechunchi/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://rcore-os.github.io/blog/2020/08/30/report-k210/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="rcore-os Group">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rcore-os Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/08/30/report-k210/" class="post-title-link" itemprop="url">移植rCore-Tutorial 到k210 徐文浩报告</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-08-30 21:30:00" itemprop="dateCreated datePublished" datetime="2020-08-30T21:30:00+00:00">2020-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-06 08:13:39" itemprop="dateModified" datetime="2020-09-06T08:13:39+00:00">2020-09-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/report/" itemprop="url" rel="index"><span itemprop="name">report</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="移植rCore-Tutorial-到k210-徐文浩报告"><a href="#移植rCore-Tutorial-到k210-徐文浩报告" class="headerlink" title="移植rCore-Tutorial 到k210 徐文浩报告"></a>移植rCore-Tutorial 到k210 徐文浩报告</h1><!-- TOC -->
+<p> 移植rCore-Tutorial 到k210 徐文浩报告](#移植rCore-Tutorial 到k210 徐文浩报告)</p>
+<ul>
+<li><a href="#目录">目录</a></li>
+<li><a href="#实验目标描述">实验目标描述</a></li>
+<li><a href="#已有相关工作介绍">已有相关工作介绍</a></li>
+<li><a href="#主要成果描述">主要成果描述</a><ul>
+<li><a href="#在opensbi上运行了lab1-6">在opensbi上运行lab1-6</a></li>
+<li><a href="#在rustsbi上运行了lab1-6">在rustsbi上运行lab1-6</a></li>
+<li><a href="#在sd卡上读写用户态">在sd卡上读写用户态</a></li>
+<li><a href="#虚拟存储">虚拟存储</a></li>
+<li><a href="#致谢">致谢</a></li>
+</ul>
+</li>
+<li><p><a href="#实验总结">实验总结</a></p>
+<!-- /TOC --></li></ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2020/08/30/report-k210/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://rcore-os.github.io/blog/2020/08/30/report-of-rCore-to-zCore/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="rcore-os Group">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rcore-os Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/08/30/report-of-rCore-to-zCore/" class="post-title-link" itemprop="url">rCore 到 zCore 功能迁移组报告</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-08-30 10:52:20" itemprop="dateCreated datePublished" datetime="2020-08-30T10:52:20+00:00">2020-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-06 08:13:39" itemprop="dateModified" datetime="2020-09-06T08:13:39+00:00">2020-09-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/report/" itemprop="url" rel="index"><span itemprop="name">report</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="rCore-到-zCore-功能迁移组报告"><a href="#rCore-到-zCore-功能迁移组报告" class="headerlink" title="rCore 到 zCore 功能迁移组报告"></a>rCore 到 zCore 功能迁移组报告</h1><p>郑昱笙、李宇</p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><!-- TOC -->
+<ul>
+<li><a href="#rcore-到-zcore-功能迁移组报告">rCore 到 zCore 功能迁移组报告</a><ul>
+<li><a href="#目录">目录</a></li>
+<li><a href="#实验目标描述">实验目标描述</a></li>
+<li><a href="#已有相关工作介绍">已有相关工作介绍</a></li>
+<li><a href="#小组成员分工">小组成员分工</a></li>
+<li><a href="#主要成果描述">主要成果描述</a><ul>
+<li><a href="#李宇">李宇</a><ul>
+<li><a href="#在-libos-与-qemu-中实现-stdin">在 LibOS 与 QEMU 中实现 stdin</a></li>
+<li><a href="#在-libos-与-qemu-中移植-shell">在 LibOS 与 QEMU 中移植 shell</a></li>
+<li><a href="#在-libos-与-qemu-中移植-gcc">在 LibOS 与 QEMU 中移植 GCC</a></li>
+<li><a href="#在-libos-与-qemu-中移植-rust-工具链-未成功">在 LibOS 与 QEMU 中移植 Rust 工具链 (未成功)</a></li>
+<li><a href="#补充系统调用以及修复系统调用相关问题">补充系统调用以及修复系统调用相关问题</a></li>
+<li><a href="#改进-makefile">改进 Makefile</a></li>
+<li><a href="#致谢">致谢</a></li>
+</ul>
+</li>
+<li><a href="#郑昱笙">郑昱笙</a><ul>
+<li><a href="#补全-zcore-中-linux-相关的三个模块的文档和单元测试">补全 zCore 中 Linux 相关的三个模块的文档和单元测试</a></li>
+<li><a href="#完善文件系统和io相关系统调用">完善文件系统和IO相关系统调用</a></li>
+<li><a href="#完善进程间通信机制">完善进程间通信机制</a></li>
+<li><a href="#致谢-1">致谢</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#对实验的后续开发内容建议或设想">对实验的后续开发内容建议或设想</a></li>
+<li><a href="#实验总结">实验总结</a></li>
+<li><a href="#实验过程日志">实验过程日志</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2020/08/30/report-of-rCore-to-zCore/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://rcore-os.github.io/blog/2020/08/13/zcore-exception-channel/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="rcore-os Group">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rcore-os Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/08/13/zcore-exception-channel/" class="post-title-link" itemprop="url">为 zCore 实现 Exception Channel 机制</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-08-13 16:59:52" itemprop="dateCreated datePublished" datetime="2020-08-13T16:59:52+00:00">2020-08-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-06 08:13:39" itemprop="dateModified" datetime="2020-09-06T08:13:39+00:00">2020-09-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/developer/" itemprop="url" rel="index"><span itemprop="name">developer</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>最近我为 zCore 实现了 zircon 的 Exception Channel 机制。下面来介绍一下 Exception Channel 机制，以及这套机制在 zCore 中的实现。<br></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2020/08/13/zcore-exception-channel/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://rcore-os.github.io/blog/2020/07/27/rCore-%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5%E6%80%BB%E7%BB%93-by-dingiso/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="rcore-os Group">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rcore-os Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/07/27/rCore-%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5%E6%80%BB%E7%BB%93-by-dingiso/" class="post-title-link" itemprop="url">rCore 第一阶段总结 by dingiso</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-27 08:14:30" itemprop="dateCreated datePublished" datetime="2020-07-27T08:14:30+00:00">2020-07-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-06 08:13:39" itemprop="dateModified" datetime="2020-09-06T08:13:39+00:00">2020-09-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/report/" itemprop="url" rel="index"><span itemprop="name">report</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="rCore-第一阶段总结"><a href="#rCore-第一阶段总结" class="headerlink" title="rCore 第一阶段总结"></a>rCore 第一阶段总结</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我是 大连理工大学 18级的一名本科生 ， 在老师的宣传下被 这个项目所深深吸引，自愿加入了进来</p>
+<p>在学习之前，我只是对 操作系统有所了解，完成了清华的课程 和 实验</p>
+<p>对 <code>RUST</code>  ，  <code>RISC-V</code>  的了解不是很多，但是 rust 的安全性， 和 risc-v 的简洁是我一直十分欣赏的<br></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2020/07/27/rCore-%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5%E6%80%BB%E7%BB%93-by-dingiso/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://rcore-os.github.io/blog/2020/07/26/sinofp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="rcore-os Group">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rcore-os Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/07/26/sinofp/" class="post-title-link" itemprop="url">总结报告_sinofp</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-26 23:49:43" itemprop="dateCreated datePublished" datetime="2020-07-26T23:49:43+00:00">2020-07-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-06 08:13:39" itemprop="dateModified" datetime="2020-09-06T08:13:39+00:00">2020-09-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/report/" itemprop="url" rel="index"><span itemprop="name">report</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>哪一个计算机系的学生不想写一个自己的操作系统呢？</p>
+<p>没事的时候，我总会想这件事。自己的操作系统，它应当闪耀着新时代的光芒：使用 Rust 编写、运行在 RISC 芯片上、最好还能抛弃宏内核……但一直没有真正坐下来实现，毕竟脑中还在幻想着其他事情。</p>
+<p>后来在编译原理群里、年级群里都看到了这次活动的通知，我感到是时候了，即使没能写出完全自主的 OS，加入一个团体鞭策自己学习 Rust、OS 也是好的。<br></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2020/07/26/sinofp/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://rcore-os.github.io/blog/2020/07/26/rCore-2020-%E6%9A%91%E6%9C%9F%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="rcore-os Group">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rcore-os Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/07/26/rCore-2020-%E6%9A%91%E6%9C%9F%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">rCore 2020 暑期实验总结</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-26 22:30:56" itemprop="dateCreated datePublished" datetime="2020-07-26T22:30:56+00:00">2020-07-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-06 08:13:39" itemprop="dateModified" datetime="2020-09-06T08:13:39+00:00">2020-09-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/report/" itemprop="url" rel="index"><span itemprop="name">report</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="题前"><a href="#题前" class="headerlink" title="题前"></a>题前</h2><pre><code>虽然本科专业属于数学系，我一直对计算机操作系统以及更底层的系统的运行原理深感兴趣。我也在2018年就学习了Rust 语言，2019 年的上半年一直在自学数学逻辑设计和 CPU 设计。自己设计一个 OS ， CPU 或者其他大型的软硬件系统，是多么令人兴奋的一件事！之前一直畏难，这个夏天，终于在 rCore 的帮助下完成了。
+</code></pre>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2020/07/26/rCore-2020-%E6%9A%91%E6%9C%9F%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://rcore-os.github.io/blog/2020/07/26/%E6%80%BB%E7%BB%93%E6%8A%A5%E5%91%8A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="rcore-os Group">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rcore-os Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/07/26/%E6%80%BB%E7%BB%93%E6%8A%A5%E5%91%8A/" class="post-title-link" itemprop="url">总结报告</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-26 21:53:01" itemprop="dateCreated datePublished" datetime="2020-07-26T21:53:01+00:00">2020-07-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-06 08:13:39" itemprop="dateModified" datetime="2020-09-06T08:13:39+00:00">2020-09-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/report/" itemprop="url" rel="index"><span itemprop="name">report</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <a id="more"></a>
+<h1 id="总结报告"><a href="#总结报告" class="headerlink" title="总结报告"></a>总结报告</h1><h2 id="学习情况"><a href="#学习情况" class="headerlink" title="学习情况"></a>学习情况</h2><p>一个月的时间转眼便以过去，经过第一阶段的学习，我收获了很多知识，但也发现了自己的种种不足。<br>最终可归纳为以下几点：</p>
+<ol>
+<li><p>Rust语言的学习： 以《Rust 程序设计语言》和《Rust编程之道》为学习资料轻松上手了基本的语法操作，但是中间有点钻牛角尖，例如在对对象安全这一概念的不理解耽误了很多时间（这点需要改正）。在上手了rustlings后，通过一遍练习一遍学习知识点的方式很快就掌握了一部分的rust知识。由于缺乏实践经验，所以在写算法题时，发现自己对指针以及递归方面还是花了很大的功夫去理解的。随后在做lab的过程中发现对于模块化的知识确实要求很大，所以又回到了《Rust编程之道》中将第十章的代码全部实现了一遍。 总体来说对于rust语言的使用已经渐渐熟悉，但还是需要不断的学习和使用。</p>
+</li>
+<li><p>risc-v与操作系统的学习： 对于risc-v而言一开始其实是比较畏惧的，因为之前没接触甚至没听说过。由于之前由于之前学过x86汇编和一些单片机的知识，慢慢理解了一些皮毛。不过在实践过程中如果实际遇到问题该查资料的地方倒是没有含糊，也是慢慢有所收获。 操作系统由于之前在学校学习过，理论部分的知识还是能在一定的时间内重新捡起来。</p>
+</li>
+<li><p>lab实验： 因为怕自己rust不熟练，对lab本来比较畏惧，但为了学习也是迎着头皮往前冲。但是没想到一开始拦住我的居然是环境配置(果然装软件才是最难的),因为自己电脑版本较老，花了一天多才把环境给装配好，为此还专门写了篇博文记录了所走过的坑(或许对项目其他同学有帮助)。</p>
+</li>
+</ol>
+<p>接下来便是正式lab的环节：</p>
+<ul>
+<li>lab0没有遇到太大的问题，但是收获很大。了解了bootloader已经一些与硬件环境，程序依赖有关的知识，这一部分的知识在学校学习的理论知识中是从未提及过的。</li>
+<li>lab1是实现中断系统，中断是实现其他程序调度和硬件访问等功能的基础。有关寄存器，上下文等知识之前有了解过，所以没有遇到较大问题。</li>
+<li>lab2是实现动态内存分配，主要涉及动态内存，连续内存分配算法，外碎片，碎片整合等概念。由于文档部分很多内容没有提及，所以花了较多的时间去比对源码以及学习其他同学的博客。</li>
+<li>lab3是地址映射的内容，主要涉及虚地址与实地址的转换，页表等较为重要的概念。本实验包含较多的理论知识，花了较长的时间去查阅文档资料。并且开始有知识难以琢磨，比如页面转算法，在着方面挣扎花费了较多时间导致后期时间有所来不及。</li>
+<li>lab4是线程和进程，理解起来也不是很轻松，由于时间的问题，只能照着人家的代码匆匆实现了一遍，花时间读了下实验指导书，可以说学的不是很扎实。</li>
+<li>lab5-6同只是照着人家的代码匆匆实现了一遍，读了下实验指导书，在遇到不懂的问题时就立刻去问同学，自己的思考较少，这也是我要再补救的地方。后续打算把实验题也一同补上。</li>
+</ul>
+<h2 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h2><p>老师好！我叫文博，很高兴我能来参加本次实验，记得看到有关项目的消息时已是7月3号晚，压着最后的时间线进组已经是兴奋不已。在这种激动的心情下我开始着手于项目内容的学习。</p>
+<p>对于rust的内容对我来说都是新接触的知识，可能上手有些慢。但是后期在完成了相应的练习和算法题后，渐渐有了一定的开发能力。</p>
+<p>有关risc-v的知识之前是从来没有接触，但是由于之前学过x86汇编和一些单片机的知识，所以慢慢也能开始理解和接受。</p>
+<p>虽然本身近期也在学习有关操作系统的知识，但是在实际动手后发现自己还是有诸多不足，例如对页面置换，线程调度等问题上有很多自己无法理解的知识。在不断的代码实践中发觉自身对操作系统的各种细节又了更进一步了解，可以说这是参加活动后最大的收获。</p>
+<p>作为一名正在考研期间的学生，一开始我着力于分配两者之间的平衡，在发觉自己对操作系统方面欠缺的知识量很大的情况，我便决定中途花了近一个礼拜的时间将近期考研的任务完成，紧接着投入到全天候的实验中来。</p>
+<p>在发觉自身的诸多不足时，我选择主对结交一些同学并向他们虚心请教。在此过程中即让自己收获到了知识，也认识到了很多厉害是大神同学。当然，期间因为自己的打扰，以及一些提问的不严谨等也着实给大家添了不少麻烦，为此在实验截至之际我也对大家表示了抱歉以及感谢，并收获到了友谊。</p>
+<p>由于本身对较底层的知识比较感兴趣，在参加完实验后更萌生了以操作系统作为以后研究方向的想法。</p>
+<p>最后感谢陈老师能让我参加这次项目，让我有如此大的收获，希望有机会能继续在项目组中学习，希望rcore项目越来越好！</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://rcore-os.github.io/blog/2020/07/26/chibinz_briefing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="rcore-os Group">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rcore-os Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/07/26/chibinz_briefing/" class="post-title-link" itemprop="url">chibinz's Summer of Code Briefing</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-26 21:41:00" itemprop="dateCreated datePublished" datetime="2020-07-26T21:41:00+00:00">2020-07-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-06 08:13:39" itemprop="dateModified" datetime="2020-09-06T08:13:39+00:00">2020-09-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/report/" itemprop="url" rel="index"><span itemprop="name">report</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="OS-Summer-of-Code-第一阶段总结报告"><a href="#OS-Summer-of-Code-第一阶段总结报告" class="headerlink" title="OS Summer of Code 第一阶段总结报告"></a>OS Summer of Code 第一阶段总结报告</h1><p>首先自报家门，我是在来自上海科技大学信息学院的张18级本科生张驰斌。了解到这一次实习机会是通过大群里面一位同学发的消息。原本自己也对“用Rust在RISC-V机器上面写一个OS”这样新技术的梦幻联动也有过畅想过，加上对计算机底层知识比较感兴趣，没有多想就报名了。<br></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2020/07/26/chibinz_briefing/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="page-number" href="/blog/page/3/">3</a><a class="extend next" rel="next" href="/blog/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
+
+
+        </div>
+        
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">rcore-os Group</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/muse.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
